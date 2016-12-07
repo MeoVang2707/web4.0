@@ -1,12 +1,15 @@
 class ShipControler{
   constructor(x,y, spriteName, configs){
     this.configs = configs;
-    this.sprite = Nakama.playertGroup.create(
+    this.sprite = Nakama.playerGroup.create(
       x,
       y,
       'assets',
       spriteName);
     this.sprite.anchor = new Phaser.Point(0.5,0.5);
+    this.sprite.health = configs.health;
+    this.sprite.body.collideWorldBounds = true;
+    this.sprite.body.setCircle(this.configs.hitBoxRadius, this.configs.hitBoxOffset.x, this.configs.hitBoxOffset.y);
     this.timeSinceLastFire = 0;
   }
 
@@ -35,13 +38,6 @@ class ShipControler{
     if(Nakama.keyboard.isDown(this.configs.fire) && this.timeSinceLastFire >= this.configs.cooldown){
       this.fire();
       this.timeSinceLastFire = 0;
-    }
-
-  }
-
-  fire(){
-    for (var i = 1; i<6; i++){
-      var newBullet = new Bullet(this.sprite.position.x, this.sprite.position.y, 'BulletType1.png', i);
     }
   }
 }

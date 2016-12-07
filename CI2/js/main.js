@@ -2,23 +2,26 @@ var Nakama = {};
 Nakama.Configs = {
   SHIP_SPEED: 500,
   BULLET_SPEED: 1000,
-  DAMAGE: 1
+  PLAYER_TYPE : {
+    PLAYER_1: true,
+    PLAYER_2: false,
+  }
 }
 
 window.onload = function(){
-  Nakama.game = new Phaser.Game(
-    640,
-    960,
-    Phaser.AUTO,
-    '',
+  Nakama.Configs.SHIP_TYPE = {
+    SHIP_TYPE1: ShipType1Controller,
+    SHIP_TYPE2: ShipType2Controller,
+    SHIP_TYPE3: ShipType3Controller,
+  }
+
+  Nakama.game = new Phaser.Game(640, 960, Phaser.AUTO, '',
     {
       preload: preload,
       create: create,
       update: update,
       render: render
-    },
-    false,
-    false
+    }, false, false
   );
 }
 
@@ -32,44 +35,47 @@ var preload = function(){
 
   Nakama.game.load.atlasJSONHash('assets', 'Assets/assets.png', 'Assets/assets.json');
   Nakama.game.load.image('background', 'Assets/Map1.png');
-  Nakama.game.load.image('kaboom', 'Assets/boom.png');
+  Nakama.game.load.image('laze', 'Assets/boom.png');
   Nakama.game.time.advancedTiming = true;
 }
+
 var create = function(){
   Nakama.game.physics.startSystem(Phaser.Physics.ARCADE); //Trọng lực
   Nakama.keyboard = Nakama.game.input.keyboard;
   Nakama.background = Nakama.game.add.tileSprite(0, 0, 640, 960, 'background');
   Nakama.bulletGroup = Nakama.game.add.physicsGroup();
+  Nakama.playerGroup = Nakama.game.add.physicsGroup();
   Nakama.enemyGroup = Nakama.game.add.physicsGroup();
-  Nakama.playertGroup = Nakama.game.add.physicsGroup();
   Nakama.shipControlers = [];
   Nakama.enemys = [];
 
-  var player1 = new ShipControler(200, 800, "Spaceship1-Player.png", {
+  // var enemy1 = new Enemy(100, 100, "EnemyType1.png", {health: 20});
+  // document.write(enemy1.sprite.position.x);
+
+  var player1Constructor = getPlayerShipChoice("Player1");
+  var player2Constructor = getPlayerShipChoice("Player2");
+
+  var player1 = new player1Constructor(200, 800, Nakama.Configs.PLAYER_TYPE.PLAYER_1, {
     up : Phaser.Keyboard.UP,
     down : Phaser.Keyboard.DOWN,
     left : Phaser.Keyboard.LEFT,
     right : Phaser.Keyboard.RIGHT,
-    fire  : Phaser.Keyboard.SPACEBAR,
-    cooldown: 0.1
+    fire  : Phaser.Keyboard.SPACEBAR
   });
   Nakama.shipControlers.push(player1);
 
-  var player2 = new ShipControler(400, 800, "Spaceship2-Player.png", {
+  var player2 = new player2Constructor(400, 800, Nakama.Configs.PLAYER_TYPE.PLAYER_2, {
     up : Phaser.Keyboard.W,
     down : Phaser.Keyboard.S,
     left : Phaser.Keyboard.A,
     right : Phaser.Keyboard.D,
-    fire  : Phaser.Keyboard.SHIFT,
-    cooldown: 0.1
+    fire  : Phaser.Keyboard.SHIFT
   });
   Nakama.shipControlers.push(player2);
 
   for (var i = 1; i < 6; i++) {
-    var enemy1 = new Enemy(100*i, 100, "EnemyType1.png", 20);
+    var enemy1 = new Enemy(100*i, 100, "EnemyType1.png", {health: 20});
     Nakama.enemys.push(enemy1);
-  // var enemy2 = new Enemy(500, 100, "EnemyType1.png", 20);
-  // Nakama.enemys.push(enemy2);
   }
 
 }
@@ -89,8 +95,37 @@ var update = function(){
 }
 
 function onBulletHitActor(bulletSprite, actorSprite){
-  actorSprite.damage(1);
+  actorSprite.damage(bulletSprite.powrer);
   bulletSprite.kill();
 }
 
-var render = function(){}
+function getPlayerShipChoice(playerName) {
+  var playerChoice = prompt( playerName + " please chose ship type");
+  playerChoice = parseInt(playerChoice);
+  switch (playerChoice) {
+    case 2:
+      var playerConstructor = Nakama.Configs.SHIP_TYPE.SHIP_TYPE2;
+      break;
+    case 3:
+      var playerConstructor = Nakama.Configs.SHIP_TYPE.SHIP_TYPE3;
+      break;
+    case 1:
+    default:
+      var playerConstructor = Nakama.Configs.SHIP_TYPE.SHIP_TYPE1;
+      break;
+    }
+  return playerConstructor;
+}
+
+var render = function(){
+  // Nakama.playerGroup.forEachAlive(function(sprite){
+  //   Nakama.game.debug.body(sprite);
+  // });
+  // Nakama.bulletGroup.forEachAlive(function(sprite){
+  //   Nakama.game.debug.body(sprite);
+  // });
+  // Nakama.enemyGroup.forEachAlive(function(sprite){
+  //   Nakama.game.debug.body(sprite);
+  // });
+
+}

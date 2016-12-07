@@ -66,10 +66,8 @@ var create = function(){
   Nakama.shipControlers.push(player2);
 
   for (var i = 1; i < 6; i++) {
-    var enemy1 = new Enemy(100*i, 100, "EnemyType1.png", 20);
-    Nakama.enemys.push(enemy1);
-  // var enemy2 = new Enemy(500, 100, "EnemyType1.png", 20);
-  // Nakama.enemys.push(enemy2);
+    var enemy = new Enemy(100*i, 100, "EnemyType1.png", 20);
+    Nakama.enemys.push(enemy);
   }
 
 }
