@@ -46,6 +46,7 @@ var create = function(){
   Nakama.bulletGroup = Nakama.game.add.physicsGroup();
   Nakama.playerGroup = Nakama.game.add.physicsGroup();
   Nakama.enemyGroup = Nakama.game.add.physicsGroup();
+  Nakama.bullets = [];
   Nakama.shipControlers = [];
   Nakama.enemys = [];
 
