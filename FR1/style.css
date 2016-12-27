@@ -3,24 +3,23 @@
   color: #402E2A;
   font-weight: bold;
   text-align: center;
+  line-height: 30px;
 }
 
 .menu.menu_vertical{
   width: 100px;
+  line-height: 30px;
 }
 
 .item{
   /*background-color: white;*/
   display: inline-block;
   width: 100px;
-  padding-top: 6px;
-  padding-bottom: 6px;
   text-align: center;
 }
 
 .item.item_vertical {
   display: block;
-  padding-bottom: 5px;
   border-bottom: 1px solid white;
 }
 

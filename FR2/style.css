@@ -1,0 +1,45 @@
+.menu {
+  background-color: #D5B0AC;
+  color: #402E2A;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0px;
+}
+
+.menu span{
+  display: inline-block;
+  width: 100px;
+  font-size: 16px;
+  line-height: 30px;
+  position: relative;
+}
+
+.menu.menu_vertical{
+  width: 100px;
+  display: none;
+  position: absolute;
+  background: transparent;
+}
+
+.menu.menu_vertical span{
+  background-color: #D5B0AC;
+  display: block;
+  line-height: 30px;
+  font-size: 16px;
+  margin-bottom: 1px;
+}
+
+.menu span:hover{
+  background-color: #9CD08F;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.menu span:hover>.menu.menu_vertical{
+  display: block;
+}
+
+.menu.menu_vertical span:hover>.menu.menu_vertical{
+  display: inline-block;
+  left: 100px;
+}
