@@ -1,0 +1,155 @@
+body{
+  background: #DFDFDF;
+}
+
+.header{
+  background: #FFFFFF;
+  padding: 15px 0 10px;
+}
+
+/*Phần tìm kiếm*/
+.search-form input[type=text]{
+  border-radius: 0;
+  padding-right: 23px;
+}
+.search-form .glyphicon-search{
+  position: absolute;
+  right: 22px;
+  top: 30%;
+  transform: translate(0; -50%);
+  color: #CECECE;
+}
+
+/*Phần logo*/
+.site-logo{
+  color: #00A0C6;
+  font-size: 22px;
+  line-height: 34px;
+  font-weight: 100;
+}
+
+/*Phần profile*/
+.profile_wrapper{
+  border: 1px solid #cecece;
+  padding-left: 0px;
+  vertical-align: middle;
+}
+.profile_wrapper button{
+  background: #ffffff;
+  color: #cecece;
+  border: none;
+  float: left;
+  height: 28px;
+  width: 30px;
+  border-right: 1px solid #cecece;
+}
+.username{
+  color: #cecece;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 15px;
+  display: inline-block;
+}
+.profile_wrapper button:hover{
+  background: #00A0C6;
+  color: white;
+}
+
+/*Phần body*/
+/*Ảnh chính*/
+.image-total .avatar{
+  width: 307.25px;
+  max-width: 307.25px;
+  min-width: 100px;
+}
+
+/*icon dấu cống trên*/
+.image-total .icon1-in-image{
+  width: 20px;
+  border: none;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  margin: 10px;
+  background: transparent;
+  background-color: #cecece;
+  display: none;
+}
+
+/*Hiện dấu cộng trên*/
+.image-and-icon:hover>.icon1-in-image{
+  display: block;
+}
+
+/*Các icon dưới*/
+.image-total .icon-line{
+  display: none;
+  position: relative;
+}
+
+/*Hiện các icon dưới*/
+.image-and-icon:hover>.icon-line{
+  display: block;
+}
+
+/*Điều chỉnh các icon dưới*/
+.image-total .icon2-in-image{
+  position: absolute;
+  color: white;
+  bottom: 20px;
+  left: 40px;
+}
+.image-total .icon3-in-image{
+  position: absolute;
+  color: white;
+  bottom: 20px;
+  margin-left: 120px;
+}
+.image-total .icon3-in-image .glyphicon{
+  margin-left: 20px;
+}
+.image-total .icon4-in-image{
+  position: absolute;
+  color: white;
+  bottom: 20px;
+  left: 240px;
+}
+
+/*Phần dưới ảnh chính*/
+/*Toàn thể*/
+.image-info{
+  background: #FFFFFF;
+  width: 307.25px;
+}
+
+/*Ảnh nhỏ*/
+.image-info .image-icon{
+  background: pink;
+  display: inline;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  margin: 15px;
+  position: absolute;
+}
+
+/*Tên chính*/
+.image-info .name{
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 90px;
+  padding-top: 15px;
+  margin-bottom: 0px;
+}
+
+/*Tên phụ*/
+.image-info .nickname{
+  margin-left: 90px;
+  color: #cecece;
+  margin-bottom: 0px;
+}
+
+/*Đoạn văn xàm le*/
+.image-info .description{
+  padding: 10px;
+}
