@@ -40,8 +40,25 @@
 
     <section class="container">
       <div class="row" id="item_list">
+
+      </div>
+
+      <div class="loading">
+        <span class="dot dot1"></span>
+        <span class="dot dot2"></span>
+        <span class="dot dot3"></span>
       </div>
     </section>
+
+    <div class="modal fade" id="item_modal" tabindex="-1" role="dialog" aria-labelledby="item_modal_label">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body" id="item_modal_body">
+            <!-- Modal content goes here -->
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script id="item-template" type="text/x-handlebars-template">
       {{#each items}}
@@ -50,7 +67,7 @@
           <div class="image_container">
             <img src="{{imageUrl}}">
             <div class="overlay">
-              <button type="button" class="plus_button" onclick="document.getElementById({{id_number}}).style.display='block'">
+              <button type="button" class="plus_button" data-item-id="{{id}}">
                 <span class="glyphicon glyphicon-plus"></span>
               </button>
               <div class="img_statistics_container">
@@ -81,55 +98,47 @@
           </div>
         </div>
       </div>
+      {{/each}}
+    </script>
 
-      <div id={{id_number}} class="modal">
-        <div class="modal2 item">
-          <div class="item">
-            <div class="image_container">
-              <div style="display: inline-block; padding: 15px;">
-                <button type="button" style="background:#cecece; height:30px" onclick="document.getElementById('{{id_number}}').style.display='none'">
-                  <span class="glyphicon glyphicon-minus"></span>
-                </button>
-                <div class="row text-center" style="position: absolute; top:0; right:0; margin:15px; text-align: center">
-                  <div class="col-xs-4">
-                    <span class="glyphicon glyphicon-eye-open"></span>
-                    <p>{{view}}</p>
-                  </div>
-                  <div class="col-xs-4">
-                    <span class="glyphicon glyphicon-time"></span>
-                    <p>{{date}}</p>
-                  </div>
-                  <div class="col-xs-4">
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <p>{{plus}}</p>
-                  </div>
-                </div>
-              </div>
-              <img src="{{imageUrl}}" style="padding: 0px 15px 0 15px; width:100%;">
-            </div>
-            <div class="info_container">
-              <div class="author_info">
-                <img src="{{posterAvatar}}" class="author_avatar">
-                <h3>{{posterName}}</h3>
-                <p class="text-muted">{{posterTitle}}</p>
-              </div>
-              <p style="margin-bottom:0;">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-              </p>
-              <hr>
-              <div class="user_info">
-                <img src="img/1.png" class="user_avatar">
-                <h5>Bach Le</h5>
-                <p>
-                  Lorem Ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores.
-                </p>
-              </div>
+    <script id="item-modal-template" type="text/x-handlebars-template">
+      <div>
+        <button type="button" class="plus_button plus_button_modal pull-left" data-item-id="{{id}}">
+          <span class="glyphicon glyphicon-plus"></span>
+        </button>
 
-            </div>
+        <div class="pull-right text-center item_modal_statistic">
+          <div>
+            <span class="glyphicon glyphicon-eye-open"></span>
+            <p>{{view}}</p>
+          </div>
+          <div>
+            <span class="glyphicon glyphicon-time"></span>
+            <p>{{date}}</p>
+          </div>
+          <div>
+            <span class="glyphicon glyphicon-plus"></span>
+            <p>{{plus}}</p>
           </div>
         </div>
       </div>
-      {{/each}}
+      <div class="image_container">
+        <img src="{{imageUrl}}">
+      </div>
+      <div>
+        <div class="author_info">
+          <img src="{{posterAvatar}}" class="author_avatar author_avatar_big">
+          <h1>{{posterName}}</h1>
+          <p class="text-muted">{{posterTitle}}</p>
+        </div>
+        <p>{{content}}</p>
+      </div>
+      <hr>
+      <div>
+        <img src="{{posterAvatar}}" class="author_avatar">
+        <p><strong>{{posterName}}</strong></p>
+        <p class="text-muted">{{posterTitle}}</p>
+      </div>
     </script>
 
   </body>

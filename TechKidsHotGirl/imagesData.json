@@ -1,7 +1,8 @@
+
 {
   "items" : [
     {
-      "id_number"     : "1",
+      "id"            : 0,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/1.png",
       "view"          : 857,
       "date"          : "07/05/12",
@@ -12,7 +13,7 @@
       "content"       : "Lorem ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores."
     },
     {
-      "id_number"     : "2",
+      "id"            : 1,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/3.png",
       "view"          : 857,
       "date"          : "07/05/12",
@@ -23,7 +24,7 @@
       "content"       : "Lorem ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores."
     },
     {
-      "id_number"     : "3",
+      "id"            : 2,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/2.png",
       "view"          : 857,
       "date"          : "07/05/12",
@@ -34,7 +35,7 @@
       "content"       : "Lorem ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores."
     },
     {
-      "id_number"     : "4",
+      "id"            : 3,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/4.png",
       "view"          : 857,
       "date"          : "07/05/12",
@@ -45,7 +46,7 @@
       "content"       : "Lorem ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores."
     },
     {
-      "id_number"     : "5",
+      "id"            : 4,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/1.png",
       "view"          : 857,
       "date"          : "07/05/12",
@@ -56,7 +57,7 @@
       "content"       : "Lorem ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores."
     },
     {
-      "id_number"     : "6",
+      "id"            : 5,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/3.png",
       "view"          : 857,
       "date"          : "07/05/12",
@@ -67,7 +68,7 @@
       "content"       : "Lorem ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores."
     },
     {
-      "id_number"     : "7",
+      "id"            : 6,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/2.png",
       "view"          : 857,
       "date"          : "07/05/12",
@@ -78,7 +79,7 @@
       "content"       : "Lorem ipsum dolor sit amet, te possim inimicus ius. Alii ullam at corper pri ad, per nulla luptatum te, in qui delenit nostrum. Nam ad labores."
     },
     {
-      "id_number"     : "8",
+      "id"            : 7,
       "imageUrl"      : "http://www.vatcss.info/TechKidsGirls/4.png",
       "view"          : 857,
       "date"          : "07/05/12",

@@ -104,6 +104,10 @@ body{
   height: 50px;
   border-radius: 100%;
 }
+.author_avatar.author_avatar_big{
+  width: 130px;
+  height: 130px;
+}
 
 .plus_button{
   position: absolute;
@@ -127,37 +131,46 @@ body{
   color: #ffffff;
 }
 
-.modal{
-  display: none;
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+.item_modal_statistic>div{
+  width: 70px;
+  padding: 0 5px;
+  display: inline-block;
 }
 
-.modal .modal2{
-  width: 450px;
-  height: 100%;
-  position: absolute;
-  top:60%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
+.loading{
+  display: flex;
+  justify-content: center;
 }
 
-.user_avatar{
-  float: left;
-  margin-right: 15px;
-  width: 30px;
-  height: 30px;
+.dot{
+  width: 20px;
+  height: 20px;
   border-radius: 100%;
+  background: #1ab7bc;
+  margin: 10px;
 }
 
-.user_info h5{
-  margin-bottom: 0;
-  margin-top: 0;
-  font-weight: bold;
+.dot1{
+  animation-name: dot_animation;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+.dot2{
+  animation-name: dot_animation;
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+.dot3{
+  animation-name: dot_animation;
+  animation-delay: 1s;
+  animation-duration: 1.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes dot_animation {
+  0% {background-color: #1ab7bc;}
+  33% {background-color: #1c777a;}
+  100% {background-color: #1ab7bc;}
 }
