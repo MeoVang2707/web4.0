@@ -39,15 +39,15 @@ $(document).ready(function(){
     $("#item_modal").modal("show");
   });
 
-  // $(window).on('scroll', function(){
-  //   if (isRequestNextPage) return;
-  //   if( ($(window).scrollTop() + window.innerHeight ) > ( $(document).height() - 200)){
-  //     setTimeout(function(){
-  //       requestNextPage(itemTemplate);
-  //     }, 1500);
-  //     isRequestNextPage = true;
-  //   }
-  // })
+  $(window).on('scroll', function(){
+    if (isRequestNextPage) return;
+    if( ($(window).scrollTop() + window.innerHeight ) > ( $(document).height() - 200)){
+      setTimeout(function(){
+        requestNextPage(itemTemplate);
+      }, 1500);
+      isRequestNextPage = true;
+    }
+  })
 
 });
 
