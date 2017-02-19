@@ -1,0 +1,12 @@
+body {
+  margin: 0px;
+  overflow: hidden;
+}
+
+.menu {
+  position: fixed;
+}
+
+.menu>a {
+  color: #ffffff;
+}
